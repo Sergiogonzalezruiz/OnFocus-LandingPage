@@ -659,6 +659,13 @@ section {
     margin-bottom: 1rem;
 }
 
+.footer-logo {
+    width: 150px;
+    height: auto;
+    margin-bottom: 1rem;
+    display: block;
+}
+
 .footer-info p {
     color: #b0c4d8;
     margin-bottom: 0.5rem;

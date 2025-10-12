@@ -133,7 +133,7 @@ p {
     right: 0;
     width: 50%;
     height: 100%;
-    background: radial-gradient(circle at top right, rgba(94, 172, 226, 0.1), transparent);
+    background: radial-gradient(circle at top right, rgba(94, 172, 226, 0.4), transparent);
     pointer-events: none;
 }
 
@@ -725,9 +725,17 @@ section {
    ========================================== */
 
 @media (max-width: 968px) {
+    .hero::before {
+        display: none;
+    }
+    
     .hero-content {
         grid-template-columns: 1fr;
         gap: 3rem;
+    }
+    
+    .hero-image {
+        display: none;
     }
     
     .hero-title {

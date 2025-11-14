@@ -271,5 +271,5 @@ document.querySelectorAll('.btn').forEach(button => {
 // ==========================================
 
 console.log('%c OnFocus 🎯', 'color: #5eace2; font-size: 24px; font-weight: bold;');
-console.log('%c Transformando la atención en valor real', 'color: #2d3e50; font-size: 14px;');
-console.log('%c Desarrollado con ❤️ para Startup OLÉ', 'color: #7a8fa5; font-size: 12px;');
+console.log('%c First-Party Data & Consumer Insights de la Gen-Z', 'color: #2d3e50; font-size: 14px;');
+

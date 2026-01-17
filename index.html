@@ -1,218 +1,309 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="OnFocus - First-party data e insights de la Gen-Z a través de una plataforma de bienestar digital que potencia tu RSC.">
-    <title>OnFocus - Conecta con la Generación Z | First-Party Data & Consumer Insights</title>
+    <meta name="description"
+        content="OnFocus - La app que convierte tu concentración en recompensas reales. Deja el móvil, gana cafés gratis y descuentos.">
+    <title>OnFocus - Concéntrate y Gana Recompensas Reales</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">
+                <img src="./Images/Logo_Onfocus-removebg-preview.png" alt="OnFocus Logo">
+            </a>
+            <ul class="nav-links">
+                <li><a href="#problema">El Problema</a></li>
+                <li><a href="#como-funciona">Cómo Funciona</a></li>
+                <li><a href="#demo">Demo</a></li>
+                <li><a href="#faq">FAQs</a></li>
+            </ul>
+            <a href="https://forms.gle/wgtZzWWfe7T1ojnM9" class="btn btn-nav" target="_blank"
+                rel="noopener noreferrer">Únete ya</a>
+            <button class="nav-toggle" id="nav-toggle" aria-label="Menú">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
     <!-- Hero Section -->
     <section class="hero" id="hero">
+        <div class="hero-bg-effects">
+            <div class="hero-gradient"></div>
+            <div class="hero-particles"></div>
+        </div>
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
-                    <h1 class="hero-title fade-up">El Nuevo Canal para Conectar con la Generación Z</h1>
-                    <p class="hero-subtitle fade-up">Generamos <strong>first-party data</strong> e <strong>insights</strong> únicos de la Gen-Z, a través de una plataforma de bienestar digital que potencia tu <strong>RSC</strong>.</p>
-                    <div class="hero-buttons fade-up">
-                        <a href="https://forms.gle/8Zc4wHvMwDHEngPZ6" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Quiero ser Partner</a>
-                        <a href="https://forms.gle/wgtZzWWfe7T1ojnM9" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Soy Estudiante</a>
+                    <h1 class="hero-title fade-up">
+                        Deja el móvil,<br>
+                        <span class="gradient-text">gana recompensas.</span>
+                    </h1>
+                    <p class="hero-subtitle fade-up">
+                        Convierte tu tiempo de estudio en <strong>cafés gratis</strong>, <strong>descuentos</strong> y
+                        más.
+                        Así de simple.
+                    </p>
+                    <div class="hero-cta fade-up">
+                        <a href="https://forms.gle/wgtZzWWfe7T1ojnM9" class="btn btn-primary btn-glow" target="_blank"
+                            rel="noopener noreferrer">
+                            <span>Únete a la lista de espera VIP</span>
+                            <i data-lucide="arrow-right"></i>
+                        </a>
+                        <a href="#como-funciona" class="btn btn-secondary">
+                            Ver cómo funciona
+                        </a>
+                    </div>
+                    <div class="hero-social-proof fade-up">
+                        <div class="social-proof-counter">
+                            <span class="counter-icon-svg">
+                                <i data-lucide="users"></i>
+                            </span>
+                            <span class="counter-number" data-target="527">+527</span>
+                            <span class="counter-text">estudiantes ya esperando</span>
+                        </div>
                     </div>
                 </div>
-                <div class="hero-image fade-up">
-                    <div class="mockup-placeholder">
-                        <svg viewBox="0 0 200 400" class="phone-mockup">
-                            <rect x="10" y="10" width="180" height="380" rx="20" fill="#1a2734" opacity="0.8"/>
-                            <rect x="20" y="30" width="160" height="340" rx="10" fill="#2d3e50"/>
-                            <circle cx="100" cy="360" r="20" fill="#5eace2" opacity="0.3"/>
-                            <image href="./Images/Logo_Onfocus-removebg-preview.png" x="25" y="120" width="150" height="150"/>
-                        </svg>
+                <div class="hero-visual fade-up">
+                    <div class="phone-mockup-container">
+                        <div class="phone-glow"></div>
+                        <div class="phone-frame">
+                            <div class="phone-screen">
+                                <!-- App Header -->
+                                <div class="app-header">
+                                    <img src="./Images/Logo_Onfocus-removebg-preview.png" alt="OnFocus"
+                                        class="app-logo-small">
+                                    <div class="app-header-tokens">
+                                        <i data-lucide="coins"></i>
+                                        <span>127</span>
+                                    </div>
+                                </div>
+
+                                <!-- Timer Circular -->
+                                <div class="timer-container">
+                                    <div class="timer-circle">
+                                        <svg class="timer-svg" viewBox="0 0 100 100">
+                                            <circle class="timer-bg" cx="50" cy="50" r="45"></circle>
+                                            <circle class="timer-progress" cx="50" cy="50" r="45"></circle>
+                                        </svg>
+                                        <div class="timer-content">
+                                            <span class="timer-value">45:23</span>
+                                            <span class="timer-label">minutos enfocado</span>
+                                        </div>
+                                    </div>
+                                    <div class="timer-status">
+                                        <span class="status-dot"></span>
+                                        <span>Sesión activa</span>
+                                    </div>
+                                </div>
+
+                                <!-- Progress Bar -->
+                                <div class="reward-progress">
+                                    <div class="progress-header">
+                                        <span>Próxima recompensa</span>
+                                        <span class="progress-tokens">73/100 tokens</span>
+                                    </div>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 73%"></div>
+                                    </div>
+                                    <div class="progress-reward">
+                                        <i data-lucide="coffee"></i>
+                                        <span>Café gratis en Starbucks</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Floating Notifications -->
+                        <div class="floating-rewards">
+                            <div class="reward-bubble reward-1">
+                                <i data-lucide="trophy"></i>
+                                <span>¡Racha de 5 días!</span>
+                            </div>
+                            <div class="reward-bubble reward-2">
+                                <i data-lucide="zap"></i>
+                                <span>+10 tokens</span>
+                            </div>
+                            <div class="reward-bubble reward-3">
+                                <i data-lucide="gift"></i>
+                                <span>Recompensa desbloqueada</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
- 
-
-    <!-- What is OnFocus Section -->
-    <section class="what-is" id="about">
+    <!-- Problem Section -->
+    <section class="problem-section" id="problema">
         <div class="container">
-            <h2 class="section-title fade-up">¿Qué es OnFocus?</h2>
-            <div class="what-is-main-content fade-up">
-                <p class="what-is-description">OnFocus es una app que transforma el tiempo sin usar el móvil en recompensas reales. Los jóvenes (16-25) ganan puntos por concentrarse y los canjean por recompensas de nuestras <strong>marcas partner</strong>.</p>
-            </div>
-            
-            <div class="cards-grid">
-                <div class="card fade-up">
-                    <div class="card-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
-                            <path d="M2 17l10 5 10-5M2 12l10 5 10-5"></path>
-                        </svg>
+            <div class="problem-content">
+                <h2 class="section-title fade-up">
+                    ¿Te suena <span class="gradient-text">esto</span>?
+                </h2>
+                <div class="problem-grid">
+                    <div class="problem-card fade-up">
+                        <div class="problem-icon">
+                            <i data-lucide="clock"></i>
+                        </div>
+                        <p>"Solo 5 minutos de Instagram"... <strong>y son 2 horas</strong></p>
                     </div>
-                    <h3>Los jóvenes ganan</h3>
-                    <p>Motivación y recompensas reales por mantenerse enfocados y productivos.</p>
-                </div>
-                
-                <div class="card fade-up">
-                    <div class="card-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <rect x="2" y="7" width="20" height="14" rx="2"></rect>
-                            <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
-                        </svg>
+                    <div class="problem-card fade-up">
+                        <div class="problem-icon">
+                            <i data-lucide="book-open"></i>
+                        </div>
+                        <p>Tienes examen mañana pero <strong>TikTok no te deja</strong></p>
                     </div>
-                    <h3>Las marcas conectan</h3>
-                    <p>Acceso directo a la Gen-Z a través de un canal ético y basado en valor mutuo.</p>
-                </div>
-                
-                <div class="card fade-up">
-                    <div class="card-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                            <circle cx="9" cy="7" r="4"></circle>
-                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                        </svg>
+                    <div class="problem-card fade-up">
+                        <div class="problem-icon">
+                            <i data-lucide="smartphone"></i>
+                        </div>
+                        <p>Tu tiempo de pantalla te avergüenza <strong>(pero no lo enseñas)</strong></p>
                     </div>
-                    <h3>El ecosistema crece</h3>
-                    <p>Datos, insights y RSC en un modelo que beneficia a todos los actores.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Business Benefits Section -->
-    <section class="business-benefits" id="business">
-        <div class="container">
-            <h2 class="section-title fade-up">¿Por qué OnFocus para tu Marca?</h2>
-            
-            <div class="benefits-grid">
-                <div class="benefit-item fade-up">
-                    <div class="benefit-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                            <circle cx="8.5" cy="7" r="4"></circle>
-                            <line x1="20" y1="8" x2="20" y2="14"></line>
-                            <line x1="23" y1="11" x2="17" y2="11"></line>
-                        </svg>
+                    <div class="problem-card fade-up">
+                        <div class="problem-icon">
+                            <i data-lucide="x-circle"></i>
+                        </div>
+                        <p>Probaste apps bloqueadoras... <strong>las desinstalaste a los 3 días</strong></p>
                     </div>
-                    <h3>First-Party Data</h3>
-                    <p>Obtén datos éticos y exclusivos de la Gen-Z en un mundo sin cookies de terceros.</p>
                 </div>
-                
-                <div class="benefit-item fade-up">
-                    <div class="benefit-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
-                        </svg>
-                    </div>
-                    <h3>Consumer Insights</h3>
-                    <p>Entiende por qué y cuándo canjean. Te damos los insights, no solo los datos.</p>
-                </div>
-                
-                <div class="benefit-item fade-up">
-                    <div class="benefit-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
-                        </svg>
-                    </div>
-                    <h3>Branding y RSC</h3>
-                    <p>Tu marca no es un anuncio, es una recompensa. Conecta con el bienestar digital.</p>
-                </div>
-                
-                <div class="benefit-item fade-up">
-                    <div class="benefit-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <line x1="12" y1="1" x2="12" y2="23"></line>
-                            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
-                        </svg>
-                    </div>
-                    <h3>Marketing de Precisión</h3>
-                    <p>Lanza campañas medibles a un público hiper-segmentado.</p>
-                </div>
+                <p class="problem-conclusion fade-up">
+                    No eres tú, es el sistema. <strong>Y nosotros lo hackeamos a tu favor.</strong>
+                </p>
             </div>
         </div>
     </section>
 
     <!-- How It Works Section -->
-    <section class="how-it-works" id="how">
+    <section class="how-it-works" id="como-funciona">
         <div class="container">
-            <h2 class="section-title fade-up">¿Cómo funciona?</h2>
-            
-            <div class="steps-container">
-                <div class="step fade-up">
+            <h2 class="section-title fade-up">
+                Así de <span class="gradient-text">fácil</span> funciona
+            </h2>
+            <p class="section-intro fade-up">
+                Sin complicaciones, sin sermones. Solo resultados.
+            </p>
+
+            <div class="steps-grid">
+                <div class="step-card fade-up">
                     <div class="step-number">1</div>
                     <div class="step-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
-                            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
-                        </svg>
+                        <i data-lucide="settings"></i>
                     </div>
-                    <h3>El estudiante descarga OnFocus</h3>
-                    <p>Onfocus incentiva al estudiante a no usar el móvil a cambio de puntos.</p>
+                    <h3>Configura tu horario</h3>
+                    <p>Tú decides cuándo quieres concentrarte. Clases, biblioteca, lo que sea.</p>
                 </div>
-                
-                <div class="step-arrow fade-up">→</div>
-                
-                <div class="step fade-up">
+
+                <div class="step-connector fade-up">
+                    <i data-lucide="chevron-right"></i>
+                </div>
+
+                <div class="step-card fade-up">
                     <div class="step-number">2</div>
                     <div class="step-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
-                        </svg>
+                        <i data-lucide="phone-off"></i>
                     </div>
-                    <h3>Acumula recompensas</h3>
-                    <p>Por cada minuto enfocado, ganan puntos canjeables.</p>
+                    <h3>Deja el móvil</h3>
+                    <p>OnFocus cuenta tu tiempo enfocado. Sin trampas, sin atajos.</p>
                 </div>
-                
-                <div class="step-arrow fade-up">→</div>
-                
-                <div class="step fade-up">
+
+                <div class="step-connector fade-up">
+                    <i data-lucide="chevron-right"></i>
+                </div>
+
+                <div class="step-card fade-up">
                     <div class="step-number">3</div>
                     <div class="step-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <rect x="2" y="7" width="20" height="14" rx="2"></rect>
-                            <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
-                        </svg>
+                        <i data-lucide="coins"></i>
                     </div>
-                    <h3>Canjea por Recompensas</h3>
-                    <p>Los usuarios usan sus puntos en ofertas y descuentos exclusivos de tu marca.</p>
+                    <h3>Gana tokens</h3>
+                    <p><strong>10 tokens por cada hora</strong> de concentración. Así de simple.</p>
                 </div>
-                
-                <div class="step-arrow fade-up">→</div>
-                
-                <div class="step fade-up">
+
+                <div class="step-connector fade-up">
+                    <i data-lucide="chevron-right"></i>
+                </div>
+
+                <div class="step-card fade-up">
                     <div class="step-number">4</div>
                     <div class="step-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
-                        </svg>
+                        <i data-lucide="gift"></i>
                     </div>
-                    <h3>Tu Marca Gana</h3>
-                    <p>Obtienes datos, insights y una conexión auténtica con la Gen-Z (RSC).</p>
+                    <h3>Canjea recompensas</h3>
+                    <p>Cafés, pizzas, descuentos... <strong>recompensas REALES</strong> cerca de tu uni.</p>
                 </div>
             </div>
         </div>
     </section>
 
-   <!-- Interactive Demo Section -->
+    <!-- Benefits Section -->
+    <section class="benefits-section" id="beneficios">
+        <div class="container">
+            <h2 class="section-title fade-up">
+                ¿Por qué <span class="gradient-text">OnFocus</span>?
+            </h2>
+
+            <div class="benefits-grid">
+                <div class="benefit-card glass-card fade-up">
+                    <div class="benefit-icon">
+                        <i data-lucide="coffee"></i>
+                    </div>
+                    <h3>Cafés gratis</h3>
+                    <p>100 tokens = café. Tus horas de estudio ahora tienen sabor.</p>
+                </div>
+
+                <div class="benefit-card glass-card fade-up">
+                    <div class="benefit-icon">
+                        <i data-lucide="trending-up"></i>
+                    </div>
+                    <h3>Mejores notas</h3>
+                    <p>Más concentración = mejores resultados. La ciencia lo dice, nosotros lo hacemos fácil.</p>
+                </div>
+
+                <div class="benefit-card glass-card fade-up">
+                    <div class="benefit-icon">
+                        <i data-lucide="zap"></i>
+                    </div>
+                    <h3>Gamificación real</h3>
+                    <p>No es otro árbol virtual. Son descuentos que puedes TOCAR (y comer).</p>
+                </div>
+
+                <div class="benefit-card glass-card fade-up">
+                    <div class="benefit-icon">
+                        <i data-lucide="badge-check"></i>
+                    </div>
+                    <h3>100% Gratis</h3>
+                    <p>La app es gratis. Siempre. Sin trucos, sin premium escondido.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo Section -->
     <section class="demo-section" id="demo">
         <div class="container">
-            <h2 class="section-title fade-up">Prueba OnFocus en acción</h2>
-            <p class="section-intro fade-up">Interactúa con nuestro prototipo y descubre cómo funciona la aplicación que está revolucionando la forma en que los jóvenes se concentran.</p>
+            <h2 class="section-title fade-up">
+                Prueba <span class="gradient-text">OnFocus</span> ahora
+            </h2>
+            <p class="section-intro fade-up">
+                Interactúa con nuestro prototipo y descubre cómo funciona. Sin descargar nada.
+            </p>
             <div class="figma-embed-wrapper fade-up">
-                <div class="figma-embed">
-                    <iframe 
-                        style="border: none;" 
-                        width="100%" 
-                        height="600" 
-                        src="https://embed.figma.com/proto/07Xo9xhDaRece144VZoRw1/Prototipo-OnFocus?page-id=0%3A1&node-id=6-474&p=f&viewport=184%2C962%2C0.91&scaling=scale-down&content-scaling=fixed&embed-host=share" 
+                <div class="figma-embed glass-card">
+                    <iframe style="border: none;" width="100%" height="600"
+                        src="https://embed.figma.com/proto/07Xo9xhDaRece144VZoRw1/Prototipo-OnFocus?page-id=0%3A1&node-id=6-474&p=f&viewport=184%2C962%2C0.91&scaling=scale-down&content-scaling=fixed&embed-host=share"
                         allowfullscreen>
                     </iframe>
                 </div>
@@ -220,18 +311,132 @@
         </div>
     </section>
 
-
-    <!-- B2B Contact Section -->
-    <section class="crowdfunding" id="contact-b2b">
+    <!-- Testimonials Section -->
+    <section class="testimonials-section" id="testimonios">
         <div class="container">
-            <div class="crowdfunding-content fade-up">
-                <h2 class="section-title">¿Eres una Marca o Agencia?</h2>
-                <p class="crowdfunding-text">Descubre cómo OnFocus te da acceso a consumer insights únicos de la Gen-Z mientras potencias tu estrategia de RSC.
-                <br><br>
-                Déjanos tus datos y nos pondremos en contacto contigo para mostrarte cómo podemos ayudarte.</p>
-                <div class="crowdfunding-buttons">
-                    <a href="https://forms.gle/8Zc4wHvMwDHEngPZ6" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Quiero ser Partner</a>
-                    <a href="https://forms.gle/wgtZzWWfe7T1ojnM9" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Soy Estudiante (Lista de espera)</a>
+            <h2 class="section-title fade-up">
+                Lo que dicen los <span class="gradient-text">early adopters</span>
+            </h2>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card glass-card fade-up">
+                    <div class="testimonial-quote">
+                        <i data-lucide="quote"></i>
+                    </div>
+                    <div class="testimonial-content">
+                        <p>"Al principio pensé que era otra app más. Pero cuando canjeé mi <strong>primer café
+                                gratis</strong>, me enganché. Llevo 3 semanas concentrándome mejor que nunca."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">C</div>
+                        <div class="author-info">
+                            <strong>Carlos</strong>
+                            <span>22 años, Ingeniería</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card glass-card fade-up">
+                    <div class="testimonial-quote">
+                        <i data-lucide="quote"></i>
+                    </div>
+                    <div class="testimonial-content">
+                        <p>"Mi problema no era el móvil, era la ansiedad de perderse cosas. OnFocus me ayudó a
+                            desconectar <strong>sin FOMO</strong>. Y encima gané descuentos en mi pizzería favorita."
+                        </p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">M</div>
+                        <div class="author-info">
+                            <strong>María</strong>
+                            <span>20 años, Psicología</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card glass-card fade-up">
+                    <div class="testimonial-quote">
+                        <i data-lucide="quote"></i>
+                    </div>
+                    <div class="testimonial-content">
+                        <p>"La gamificación está tan bien hecha que ahora <strong>QUIERO estudiar</strong> para ganar
+                            más tokens. Nunca pensé que diría esto."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">A</div>
+                        <div class="author-info">
+                            <strong>Álex</strong>
+                            <span>19 años, ADE</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section" id="faq">
+        <div class="container">
+            <h2 class="section-title fade-up">
+                Preguntas <span class="gradient-text">frecuentes</span>
+            </h2>
+
+            <div class="faq-list fade-up">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>¿Es realmente gratis?</span>
+                        <i data-lucide="chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Sí, <strong>100% gratis para estudiantes</strong>. Nunca pagarás nada. Nos financiamos a
+                            través de los comercios que ofrecen las recompensas.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>¿Cómo sé que no puedo hacer trampa?</span>
+                        <i data-lucide="chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>La app detecta si usas el móvil. Si abres otra app, se pausa el contador. Pero hey, hacer
+                            trampa solo te perjudica a ti.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>¿Qué tipo de recompensas hay?</span>
+                        <i data-lucide="chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Cafés, descuentos en restaurantes, librerías, gyms... <strong>Todo cerca de tu
+                                universidad</strong>. Y estamos añadiendo más comercios cada semana.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>¿Cuándo estará disponible?</span>
+                        <i data-lucide="chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Estamos cerrando acuerdos con comercios locales para ofrecerte las mejores recompensas.
+                            <strong>Únete a la lista de espera</strong> para ser de los primeros y conseguir 100 tokens
+                            gratis al lanzamiento.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>¿Solo funciona en horarios de estudio?</span>
+                        <i data-lucide="chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p><strong>Tú decides cuándo quieres concentrarte</strong>. Biblioteca, clases, en casa... la
+                            app se adapta a tu horario.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -240,17 +445,20 @@
     <!-- Team Section -->
     <section class="team" id="team">
         <div class="container">
-            <h2 class="section-title fade-up">Nuestro equipo</h2>
-            <p class="section-intro fade-up">Un equipo multidisciplinar comprometido con la innovación y el impacto social.</p>
-            
-            <div class="team-grid">
+            <h2 class="section-title fade-up">
+                Hecho <span class="gradient-text">por y para</span> jóvenes
+            </h2>
+            <p class="section-intro fade-up">
+                Un equipo de estudiantes que entiende tus problemas porque también los vivimos.
+            </p>
 
+            <div class="team-grid">
                 <div class="team-member fade-up">
                     <div class="member-avatar">
                         <img src="./Images/sergio.jpg" alt="Sergio">
                     </div>
                     <h3>Sergio</h3>
-                    <p class="member-role">Estudiante ingeniería informática</p>
+                    <p class="member-role">Ingeniería Informática</p>
                 </div>
 
                 <div class="team-member fade-up">
@@ -258,30 +466,58 @@
                         <img src="./Images/alex.png" alt="Álex">
                     </div>
                     <h3>Álex</h3>
-                    <p class="member-role">Graduado en economía</p>
+                    <p class="member-role">Economía</p>
                 </div>
-                
+
                 <div class="team-member fade-up">
                     <div class="member-avatar">
                         <img src="./Images/houcine.jpg" alt="Houcine">
                     </div>
                     <h3>Houcine</h3>
-                    <p class="member-role">Tecnico en ASIR</p>
+                    <p class="member-role">Técnico en ASIR</p>
                 </div>
-                
+
                 <div class="team-member fade-up">
                     <div class="member-avatar">
                         <img src="./Images/maria.png" alt="María">
                     </div>
                     <h3>María</h3>
-                    <p class="member-role">Ingeniera informática</p>
+                    <p class="member-role">Ingeniería Informática</p>
                 </div>
-                
-                
             </div>
-            
+
             <div class="support-text fade-up">
-                <p>Con el apoyo de <strong>Santander X Explorer</strong>, <strong>Tracción Ávila</strong> y la <strong>Universidad de Salamanca</strong>.</p>
+                <p>Con el apoyo de <strong>Santander X Explorer</strong>, <strong>Tracción Ávila</strong> y la
+                    <strong>Universidad de Salamanca</strong>.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="final-cta" id="cta">
+        <div class="container">
+            <div class="cta-content fade-up">
+                <div class="cta-badge">
+                    <i data-lucide="gift"></i>
+                    Oferta de lanzamiento
+                </div>
+                <h2 class="cta-title">
+                    Únete ahora y consigue<br>
+                    <span class="gradient-text">100 tokens gratis</span>
+                </h2>
+                <p class="cta-subtitle">
+                    Solo para los primeros en la lista de espera. No te quedes fuera.
+                </p>
+                <div class="cta-counter">
+                    <i data-lucide="timer"></i>
+                    <span>Plazas VIP limitadas</span>
+                </div>
+                <a href="https://forms.gle/wgtZzWWfe7T1ojnM9" class="btn btn-primary btn-large btn-glow" target="_blank"
+                    rel="noopener noreferrer">
+                    <span>Quiero mis 100 tokens gratis</span>
+                    <i data-lucide="arrow-right"></i>
+                </a>
             </div>
         </div>
     </section>
@@ -292,28 +528,45 @@
             <div class="footer-content">
                 <div class="footer-info">
                     <img src="./Images/Logo_Onfocus-removebg-preview.png" alt="OnFocus Logo" class="footer-logo">
-                    <p>Transformando la atención en valor real.</p>
-                    <p class="footer-email">📧 info@onfocus-app.es </p>
+                    <p>Transformando la concentración en valor real.</p>
+                    <p class="footer-email">
+                        <i data-lucide="mail"></i>
+                        info@onfocus-app.es
+                    </p>
                 </div>
-                
+
                 <div class="footer-social">
                     <h4>Síguenos</h4>
                     <div class="social-icons">
-                        <a href="https://www.linkedin.com/company/onfocus-app" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                            <svg viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
-                            </svg>
+                        <a href="https://www.linkedin.com/company/onfocus-app" target="_blank" rel="noopener noreferrer"
+                            aria-label="LinkedIn">
+                            <i data-lucide="linkedin"></i>
+                        </a>
+                        <a href="https://www.instagram.com/onfocus.app" target="_blank" rel="noopener noreferrer"
+                            aria-label="Instagram">
+                            <i data-lucide="instagram"></i>
+                        </a>
+                        <a href="https://twitter.com/onfocusapp" target="_blank" rel="noopener noreferrer"
+                            aria-label="Twitter">
+                            <i data-lucide="twitter"></i>
                         </a>
                     </div>
                 </div>
             </div>
-            
+
             <div class="footer-bottom">
-                <p>OnFocus © 2025 — Proyecto apoyado por Santander X Explorer</p>
+                <p>OnFocus © 2025 — Hecho con pasión por estudiantes, para estudiantes</p>
             </div>
         </div>
     </footer>
 
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+    </script>
     <script src="script.js"></script>
 </body>
+
 </html>

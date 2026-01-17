@@ -1,8 +1,7 @@
 // ==========================================
-// SCROLL ANIMATIONS
+// SCROLL ANIMATIONS - Intersection Observer
 // ==========================================
 
-// Intersection Observer for fade-up animations
 const observerOptions = {
     threshold: 0.1,
     rootMargin: '0px 0px -50px 0px'
@@ -29,6 +28,50 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // ==========================================
+// NAVBAR SCROLL BEHAVIOR
+// ==========================================
+
+const navbar = document.getElementById('navbar');
+let lastScrollY = 0;
+
+function handleNavbarScroll() {
+    const currentScrollY = window.scrollY;
+    
+    // Add scrolled class when scrolled
+    if (currentScrollY > 50) {
+        navbar.classList.add('scrolled');
+    } else {
+        navbar.classList.remove('scrolled');
+    }
+    
+    lastScrollY = currentScrollY;
+}
+
+window.addEventListener('scroll', handleNavbarScroll);
+
+// ==========================================
+// MOBILE NAV TOGGLE
+// ==========================================
+
+const navToggle = document.getElementById('nav-toggle');
+const navLinks = document.querySelector('.nav-links');
+
+if (navToggle) {
+    navToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        navToggle.classList.toggle('active');
+    });
+    
+    // Close menu when clicking a link
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+            navToggle.classList.remove('active');
+        });
+    });
+}
+
+// ==========================================
 // SMOOTH SCROLL FOR NAVIGATION
 // ==========================================
 
@@ -45,41 +88,74 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         const target = document.querySelector(href);
         
         if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
+            const navHeight = navbar.offsetHeight;
+            const targetPosition = target.getBoundingClientRect().top + window.scrollY - navHeight;
+            
+            window.scrollTo({
+                top: targetPosition,
+                behavior: 'smooth'
             });
         }
     });
 });
 
 // ==========================================
-// PARALLAX EFFECT ON HERO SECTION
+// FAQ ACCORDION
 // ==========================================
 
-let ticking = false;
+const faqItems = document.querySelectorAll('.faq-item');
 
-function updateParallax() {
-    const scrolled = window.pageYOffset;
-    const hero = document.querySelector('.hero');
+faqItems.forEach(item => {
+    const question = item.querySelector('.faq-question');
     
-    if (hero) {
-        const parallaxElements = hero.querySelectorAll('.hero-image');
-        parallaxElements.forEach(element => {
-            const speed = 0.5;
-            element.style.transform = `translateY(${scrolled * speed}px)`;
+    question.addEventListener('click', () => {
+        // Close other items
+        faqItems.forEach(otherItem => {
+            if (otherItem !== item && otherItem.classList.contains('active')) {
+                otherItem.classList.remove('active');
+            }
         });
-    }
+        
+        // Toggle current item
+        item.classList.toggle('active');
+    });
+});
+
+// ==========================================
+// COUNTER ANIMATION
+// ==========================================
+
+function animateCounter(element, target, duration = 2000) {
+    let start = 0;
+    const increment = target / (duration / 16);
     
-    ticking = false;
+    const timer = setInterval(() => {
+        start += increment;
+        if (start >= target) {
+            element.textContent = '+' + Math.round(target);
+            clearInterval(timer);
+        } else {
+            element.textContent = '+' + Math.round(start);
+        }
+    }, 16);
 }
 
-window.addEventListener('scroll', () => {
-    if (!ticking) {
-        window.requestAnimationFrame(updateParallax);
-        ticking = true;
-    }
-});
+// Animate counter when it comes into view
+const counterElement = document.querySelector('.counter-number');
+
+if (counterElement) {
+    const counterObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const target = parseInt(counterElement.dataset.target) || 527;
+                animateCounter(counterElement, target, 2000);
+                counterObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.5 });
+    
+    counterObserver.observe(counterElement);
+}
 
 // ==========================================
 // BUTTON RIPPLE EFFECT
@@ -96,7 +172,7 @@ document.querySelectorAll('.btn').forEach(button => {
             position: absolute;
             width: 20px;
             height: 20px;
-            background: rgba(255, 255, 255, 0.5);
+            background: rgba(255, 255, 255, 0.4);
             border-radius: 50%;
             transform: translate(-50%, -50%) scale(0);
             animation: ripple 0.6s ease-out;
@@ -126,10 +202,12 @@ style.textContent = `
 document.head.appendChild(style);
 
 // ==========================================
-// CARD TILT EFFECT ON HOVER
+// CARD HOVER EFFECTS
 // ==========================================
 
-document.querySelectorAll('.card, .team-member, .benefit-item').forEach(card => {
+const cards = document.querySelectorAll('.benefit-card, .step-card, .problem-card, .testimonial-card, .team-member');
+
+cards.forEach(card => {
     card.addEventListener('mousemove', handleTilt);
     card.addEventListener('mouseleave', resetTilt);
 });
@@ -143,8 +221,8 @@ function handleTilt(e) {
     const centerX = rect.width / 2;
     const centerY = rect.height / 2;
     
-    const rotateX = (y - centerY) / 10;
-    const rotateY = (centerX - x) / 10;
+    const rotateX = (y - centerY) / 15;
+    const rotateY = (centerX - x) / 15;
     
     card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-5px)`;
 }
@@ -155,26 +233,7 @@ function resetTilt(e) {
 }
 
 // ==========================================
-// COUNTER ANIMATION FOR STATS (if needed)
-// ==========================================
-
-function animateCounter(element, target, duration = 2000) {
-    let start = 0;
-    const increment = target / (duration / 16);
-    
-    const timer = setInterval(() => {
-        start += increment;
-        if (start >= target) {
-            element.textContent = Math.round(target);
-            clearInterval(timer);
-        } else {
-            element.textContent = Math.round(start);
-        }
-    }, 16);
-}
-
-// ==========================================
-// LAZY LOADING FOR IMAGES (if images are added)
+// LAZY LOADING FOR IMAGES
 // ==========================================
 
 if ('IntersectionObserver' in window) {
@@ -197,7 +256,7 @@ if ('IntersectionObserver' in window) {
 }
 
 // ==========================================
-// ACTIVE SECTION HIGHLIGHT (for navigation)
+// ACTIVE SECTION HIGHLIGHT
 // ==========================================
 
 const sections = document.querySelectorAll('section[id]');
@@ -211,11 +270,11 @@ function highlightActiveSection() {
         const sectionId = section.getAttribute('id');
         
         if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-            document.querySelectorAll(`a[href="#${sectionId}"]`).forEach(link => {
+            document.querySelectorAll(`.nav-links a[href="#${sectionId}"]`).forEach(link => {
                 link.classList.add('active');
             });
         } else {
-            document.querySelectorAll(`a[href="#${sectionId}"]`).forEach(link => {
+            document.querySelectorAll(`.nav-links a[href="#${sectionId}"]`).forEach(link => {
                 link.classList.remove('active');
             });
         }
@@ -223,53 +282,57 @@ function highlightActiveSection() {
 }
 
 window.addEventListener('scroll', () => {
+    requestAnimationFrame(highlightActiveSection);
+});
+
+// ==========================================
+// FLOATING REWARDS ANIMATION
+// ==========================================
+
+const rewardBubbles = document.querySelectorAll('.reward-bubble');
+
+rewardBubbles.forEach((bubble, index) => {
+    bubble.style.animationDelay = `${index * 0.5}s`;
+});
+
+// ==========================================
+// PARALLAX EFFECT ON HERO
+// ==========================================
+
+let ticking = false;
+
+function updateParallax() {
+    const scrolled = window.pageYOffset;
+    const heroGradient = document.querySelector('.hero-gradient');
+    
+    if (heroGradient && scrolled < window.innerHeight) {
+        heroGradient.style.transform = `translateY(${scrolled * 0.3}px)`;
+    }
+    
+    ticking = false;
+}
+
+window.addEventListener('scroll', () => {
     if (!ticking) {
-        window.requestAnimationFrame(() => {
-            highlightActiveSection();
-            ticking = false;
-        });
+        window.requestAnimationFrame(updateParallax);
         ticking = true;
     }
 });
 
 // ==========================================
-// PERFORMANCE OPTIMIZATION
+// REDUCED MOTION SUPPORT
 // ==========================================
 
-// Reduce motion for users who prefer it
 if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     document.querySelectorAll('.fade-up').forEach(element => {
         element.classList.add('visible');
     });
-    
-    // Disable parallax
-    window.removeEventListener('scroll', updateParallax);
 }
 
 // ==========================================
-// ENHANCED BUTTON INTERACTIONS
+// CONSOLE BRANDING
 // ==========================================
 
-document.querySelectorAll('.btn').forEach(button => {
-    // Add glow effect on hover
-    button.addEventListener('mouseenter', function() {
-        this.style.transition = 'all 0.3s ease';
-    });
-    
-    // Scale down slightly on click
-    button.addEventListener('mousedown', function() {
-        this.style.transform = 'scale(0.98)';
-    });
-    
-    button.addEventListener('mouseup', function() {
-        this.style.transform = 'scale(1)';
-    });
-});
-
-// ==========================================
-// CONSOLE MESSAGE
-// ==========================================
-
-console.log('%c OnFocus 🎯', 'color: #5eace2; font-size: 24px; font-weight: bold;');
-console.log('%c First-Party Data & Consumer Insights de la Gen-Z', 'color: #2d3e50; font-size: 14px;');
-
+console.log('%c🎯 OnFocus', 'color: #5eace2; font-size: 28px; font-weight: bold;');
+console.log('%c Concéntrate. Gana. Disfruta.', 'color: #a855f7; font-size: 14px;');
+console.log('%c ¿Quieres unirte? → onfocus-app.es', 'color: #22c55e; font-size: 12px;');
